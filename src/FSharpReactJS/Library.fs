@@ -1,4 +1,4 @@
-﻿namespace FSharp.ProjectTemplate
+namespace FSharpReactJS
 
 /// Documentation for my library
 ///

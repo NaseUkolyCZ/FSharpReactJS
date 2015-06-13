@@ -1,6 +1,6 @@
-﻿module FSharp.ProjectScaffold.Tests
+module FSharpReactJS.Tests
 
-open FSharp.ProjectTemplate
+open FSharpReactJS
 open NUnit.Framework
 
 [<Test>]

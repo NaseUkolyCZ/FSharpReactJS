@@ -10,8 +10,8 @@ Introducing your project
 Say more
 
 *)
-#r "FSharp.ProjectScaffold.dll"
-open FSharp.ProjectScaffold
+#r "FSharpReactJS.dll"
+open FSharpReactJS
 
 Library.hello 0
 (**
