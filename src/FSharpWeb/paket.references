@@ -3,3 +3,9 @@ bootstrap
 FsWebAddRegistryEntries
 jQuery
 Microsoft.AspNet.Mvc
+Modernizr
+Newtonsoft.Json
+Respond
+WebGrease
+Microsoft.AspNet.WebApi
+Microsoft.AspNet.Web.Optimization
