@@ -8,7 +8,7 @@
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>d39fe581-bde5-4f28-81ec-b560148af4e3</ProjectGuid>
-    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349C5851-65DF-11DA-9384-00065B846F21};{F2A71F9B-5D33-465A-A702-920D77279786}</ProjectTypeGuids>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{F2A71F9B-5D33-465A-A702-920D77279786}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <RootNamespace>FSharpWeb</RootNamespace>
@@ -104,6 +104,34 @@
     </VisualStudio>
   </ProjectExtensions>
   <ItemGroup>
+    <Content Include="Web.config.install.xdt">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Web.config.uninstall.xdt">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Icon.png">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.eot">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.svg">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2">
+      <Paket>True</Paket>
+    </Content>
+    <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\glyphicons-halflings-regular.svg" />
+    <None Include="fonts\glyphicons-halflings-regular.eot" />
     <Compile Include="AssemblyInfo.fs" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -120,12 +148,20 @@
     <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4-vsdoc.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\jquery-2.1.4.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\jquery-2.1.4.min.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\jquery-2.1.4.min.map">
+      <Paket>True</Paket>
+    </Content>
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\respond.js" />
-    <None Include="fonts\glyphicons-halflings-regular.woff" />
-    <None Include="fonts\glyphicons-halflings-regular.ttf" />
-    <None Include="fonts\glyphicons-halflings-regular.svg" />
-    <None Include="fonts\glyphicons-halflings-regular.eot" />
     <Compile Include="Controllers\HomeController.fs" />
     <Compile Include="Controllers\ValuesController.fs" />
     <Content Include="Views\Web.config" />

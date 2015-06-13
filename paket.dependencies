@@ -2,9 +2,13 @@ source https://nuget.org/api/v2
 
 nuget Antlr
 nuget FSharp.Formatting
+nuget FsWebAddRegistryEntries
+nuget Microsoft.AspNet.Mvc
 nuget NUnit 
 nuget NUnit.Runners
 nuget FAKE
 nuget SourceLink.Fake
+nuget bootstrap
+nuget jQuery
 
 github fsharp/FAKE modules/Octokit/Octokit.fsx
