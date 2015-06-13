@@ -11,6 +11,7 @@ nuget NUnit
 nuget NUnit.Runners
 nuget FAKE
 nuget Newtonsoft.Json
+nuget React.Web.Mvc4
 nuget Respond
 nuget SourceLink.Fake
 nuget WebGrease
