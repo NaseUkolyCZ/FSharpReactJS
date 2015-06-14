@@ -4,6 +4,7 @@ nuget Antlr
 nuget FSharp.Formatting
 nuget FsWebAddRegistryEntries
 nuget Microsoft.AspNet.Mvc
+nuget Microsoft.AspNet.SignalR
 nuget Microsoft.AspNet.Web.Optimization
 nuget Microsoft.AspNet.WebApi
 nuget Modernizr
@@ -11,6 +12,7 @@ nuget NUnit
 nuget NUnit.Runners
 nuget FAKE
 nuget Newtonsoft.Json
+nuget Owin
 nuget React.Web.Mvc4
 nuget Respond
 nuget SourceLink.Fake
