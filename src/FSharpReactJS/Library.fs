@@ -20,3 +20,8 @@ type User =
         FirstName: string
         LastName: string
     }
+
+type Res = 
+    {
+        choices : string array
+    }

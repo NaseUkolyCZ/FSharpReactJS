@@ -13,3 +13,4 @@ React.Web.Mvc4
 Microsoft.AspNet.SignalR
 Owin
 FSharp.Dynamic
+log4javascript

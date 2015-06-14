@@ -24,6 +24,7 @@ NUGET
     jQuery (2.1.4)
     JSPool (0.3.0)
       JavaScriptEngineSwitcher.Core (>= 1.2.4)
+    log4javascript (1.4.13)
     Microsoft.AspNet.Mvc (5.2.3)
       Microsoft.AspNet.Razor (>= 3.2.3 < 3.3.0)
       Microsoft.AspNet.WebPages (>= 3.2.3 < 3.3.0)

@@ -20,5 +20,6 @@ nuget SourceLink.Fake
 nuget WebGrease
 nuget bootstrap
 nuget jQuery
+nuget log4javascript
 
 github fsharp/FAKE modules/Octokit/Octokit.fsx

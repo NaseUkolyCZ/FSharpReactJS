@@ -153,6 +153,12 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Scripts\log4javascript.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\log4javascript_uncompressed.js">
+      <Paket>True</Paket>
+    </Content>
     <Content Include="Scripts\jquery.signalR-2.2.0.js">
       <Paket>True</Paket>
     </Content>
@@ -206,7 +212,7 @@
     <Content Include="packages.config" />
     <Content Include="readme.txt" />
     <Compile Include="Startup.fs" />
-    <Compile Include="VotingHub.fs" />
+    <Compile Include="SimpleHub.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Antlr3.Runtime">
