@@ -14,3 +14,9 @@ module Library =
   /// ## Parameters
   ///  - `num` - whatever
   let hello num = 42
+
+type User = 
+    {
+        FirstName: string
+        LastName: string
+    }

@@ -12,3 +12,4 @@ Microsoft.AspNet.Web.Optimization
 React.Web.Mvc4
 Microsoft.AspNet.SignalR
 Owin
+FSharp.Dynamic

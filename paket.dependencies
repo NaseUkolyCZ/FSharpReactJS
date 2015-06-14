@@ -1,6 +1,7 @@
 source https://nuget.org/api/v2
 
 nuget Antlr
+nuget FSharp.Dynamic
 nuget FSharp.Formatting
 nuget FsWebAddRegistryEntries
 nuget Microsoft.AspNet.Mvc
