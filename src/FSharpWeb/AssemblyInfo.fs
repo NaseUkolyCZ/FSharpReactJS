@@ -1,22 +1,12 @@
-module FSharpWeb.AssemblyInfo
+﻿namespace System
 open System.Reflection
-open System.Runtime.CompilerServices
 
+[<assembly: AssemblyTitleAttribute("FSharpWeb")>]
+[<assembly: AssemblyProductAttribute("FSharpReactJS")>]
+[<assembly: AssemblyDescriptionAttribute("Project has no summmary; update build.fsx")>]
+[<assembly: AssemblyVersionAttribute("1.0")>]
+[<assembly: AssemblyFileVersionAttribute("1.0")>]
+do ()
 
-[<assembly: AssemblyTitle("FSharpWeb")>]
-[<assembly: AssemblyDescription("")>]
-[<assembly: AssemblyConfiguration("")>]
-[<assembly: AssemblyCompany("")>]
-[<assembly: AssemblyProduct("")>]
-[<assembly: AssemblyCopyright("")>]
-[<assembly: AssemblyTrademark("")>]
-
-// The assembly version has the format {Major}.{Minor}.{Build}.{Revision}
-
-[<assembly: AssemblyVersion("1.0.0.0")>]
-
-//[<assembly: AssemblyDelaySign(false)>]
-//[<assembly: AssemblyKeyFile("")>]
-
-()
-
+module internal AssemblyVersionInformation =
+    let [<Literal>] Version = "1.0"
