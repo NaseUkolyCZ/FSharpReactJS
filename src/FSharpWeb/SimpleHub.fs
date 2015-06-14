@@ -7,6 +7,6 @@ open EkonBenefits.FSharp.Dynamic
 type SimpleHub() =
     inherit Microsoft.AspNet.SignalR.Hub()
 
-    member this.GetData() = 
-        let data = JsonConvert.SerializeObject( { FirstName = "John"; LastName = "Doe" } ) 
-        this.Clients.All?showLiveResult(data)
+    member this.Send( choice : string ) = 
+        Library.values <- { choices = Seq.append Library.values.choices ( seq [| choice + "1" |] ) |> Seq.toArray }
+        this.Clients.All?showLiveResult(JsonConvert.SerializeObject(Library.values)) |> ignore

@@ -10,9 +10,8 @@ open FSharpReactJS
 [<RoutePrefix("api2/values")>]
 type ValuesController() =
     inherit ApiController()
-    let values : Res = { choices = [|"value1";"value2"|] }
 
     /// Gets all values.
     [<Route("")>]
-    member x.Get() = values
+    member x.Get() = Library.values
 

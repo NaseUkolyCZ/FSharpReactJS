@@ -33,25 +33,54 @@ var RadioInput = React.createClass( {
 var QuizContainer = React.createClass( {
     getInitialState: function() {
         return {           
-            choices:[]
+            choices:[],
+            user_choice: "",
+            is_done: false 
         };
     },
     componentDidMount: function() {
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      success: function(data) {
-	    log.debug( "data" );
-	    log.debug( data );
-	    log.debug( "---------------------" );
-        this.setState( data );
-      }.bind(this),
-      error: function(xhr, status, err) {
-        log.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
+		var vhub = $.connection.simpleHub;
+        var self = this;
+
+		vhub.client.showLiveResult = function (data) {
+			log.debug( "data" );
+			log.debug( data );
+			log.debug( "---------------------" );
+			var obj = $.parseJSON(data);    
+			log.debug( "obj" );
+			log.debug( obj );
+			log.debug( "---------------------" );
+			self.setState(obj);                                         
+		};  
+
+		$.ajax({
+		  url: this.props.url,
+		  dataType: 'json',
+		  success: function(data) {
+			log.debug( "data" );
+			log.debug( data );
+			log.debug( "---------------------" );
+			this.setState( data );
+		  }.bind(this),
+		  error: function(xhr, status, err) {
+			log.error(this.props.url, status, err.toString());
+		  }.bind(this)
+		});
    },
-    render: function() {
+    selectedAnswer: function( option ) {
+        this.setState( { user_choice: option } );
+    },
+    handleSubmit: function() {                       
+                var selectedChoice = this.state.user_choice;
+                 var vhub = $.connection.simpleHub;
+                  $.connection.hub.start().done(function () {               
+                    // Call the Send method on the hub.
+                    vhub.server.send(selectedChoice);
+                    // Clear text box and reset focus for next comment.                   
+                });
+                this.setState({ is_done: true });
+     },
+	render: function() {
 	    log.debug( "this.state.choices" );
 	    log.debug( this.state.choices );
 	    log.debug( "---------------------" );
@@ -59,7 +88,7 @@ var QuizContainer = React.createClass( {
  
         var choices = this.state.choices.map( function( choice, index ) {           
             return (
-                <RadioInput key={choice} choice={choice} index={index} />
+                <RadioInput key={choice} choice={choice} index={index} onChoiceSelect={self.selectedAnswer}  />
             );
         } );
         var button_name = "Submit";
