@@ -5,6 +5,9 @@
         getInitialState: function() {
             return { value: "" };
         },
+        resetValue: function() {
+            this.setState(this.getInitialState());
+        },
         handleChange: function(event) {
             this.setState({value: event.target.value});
         },
@@ -30,6 +33,9 @@
                     firstName: this.refs.firstName.state.value,
                     lastName: this.refs.lastName.state.value
                 });
+
+                this.refs.firstName.resetValue();
+                this.refs.lastName.resetValue();
             }
         },
         render: function() {
@@ -48,8 +54,8 @@
                 <table>
                     <thead>
                         <tr>
-                            <td>First Name</td>
-                            <td>Last Name</td>
+                            <th>First Name</th>
+                            <th>Last Name</th>
                         </tr>
                     </thead>
                     <tbody>{
