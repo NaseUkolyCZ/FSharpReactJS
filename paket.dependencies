@@ -1,5 +1,6 @@
 source https://nuget.org/api/v2
 
+nuget AppForSharePointWebToolkit
 nuget Antlr
 nuget FSharp.Dynamic
 nuget FSharp.Formatting
