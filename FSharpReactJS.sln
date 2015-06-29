@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{63297B98-5CED-492C-A5B7-A5B4F73CF142}"
 	ProjectSection(SolutionItems) = preProject
@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{63297B
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A6A6AF7D-D6E3-442D-9B1E-58CC91879BE1}"
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpReactJS", "src\FSharpReactJS\FSharpReactJS.fsproj", "{E4177FFF-60A4-4639-AA5A-30E5015EAFAC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "project", "project", "{BF60BC93-E09B-4E5F-9D85-95A519479D54}"
 	ProjectSection(SolutionItems) = preProject
@@ -33,14 +31,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{8E6D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{ED8079DD-2B06-4030-9F0F-DC548F98E1C4}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpReactJS.Tests", "tests\FSharpReactJS.Tests\FSharpReactJS.Tests.fsproj", "{F9BA6F81-F170-4ECE-B134-F9C7BCAB5F3D}"
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpWeb", "src\FSharpWeb\FSharpWeb.fsproj", "{D39FE581-BDE5-4F28-81EC-B560148AF4E3}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{AA1BFA2C-6B06-440F-B8BC-2292F20C760F}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpReactJS", "src\FSharpReactJS\FSharpReactJS.fsproj", "{E4177FFF-60A4-4639-AA5A-30E5015EAFAC}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpReactJS.Tests", "tests\FSharpReactJS.Tests\FSharpReactJS.Tests.fsproj", "{F9BA6F81-F170-4ECE-B134-F9C7BCAB5F3D}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpWeb", "src\FSharpWeb\FSharpWeb.fsproj", "{D39FE581-BDE5-4F28-81EC-B560148AF4E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointApp", "src\SharePointApp\SharePointApp.csproj", "{82322CB6-EC65-4A81-B6C2-A6ED0FCF6DA9}"
 EndProject

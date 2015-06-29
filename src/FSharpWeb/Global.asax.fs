@@ -16,6 +16,10 @@ type BundleConfig() =
         // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
         bundles.Add(ScriptBundle("~/bundles/modernizr").Include([|"~/Scripts/modernizr-*"|]))
 
+        bundles.Add(
+            ScriptBundle("~/bundles/lodash").Include([| "~/Scripts/lodash.js" |])
+        )
+
         bundles.Add(ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Scripts/bootstrap.js",
                         "~/Scripts/respond.js"))

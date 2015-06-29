@@ -9,6 +9,7 @@ nuget Microsoft.AspNet.Mvc
 nuget Microsoft.AspNet.SignalR
 nuget Microsoft.AspNet.Web.Optimization
 nuget Microsoft.AspNet.WebApi
+nuget Microsoft.SharePointOnline.CSOM
 nuget Modernizr
 nuget NUnit 
 nuget NUnit.Runners
@@ -22,5 +23,6 @@ nuget WebGrease
 nuget bootstrap
 nuget jQuery
 nuget log4javascript
+nuget lodash
 
 github fsharp/FAKE modules/Octokit/Octokit.fsx

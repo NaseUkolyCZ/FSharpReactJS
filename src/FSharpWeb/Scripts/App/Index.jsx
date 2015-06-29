@@ -1,108 +1,106 @@
-﻿﻿var CommentBox = React.createClass({
-  render: function() {
-    return (
-      <div className="commentBox">
-        Hello, world! I am a CommentBox.
-      </div>
-    );
-  }
-});
-React.render(
-  <CommentBox />,
-  document.getElementById('content')
-);
+﻿;(function() {
+    "use strict";
 
-var RadioInput = React.createClass( {
-    handleClick: function() {
-        this.props.onChoiceSelect( this.props.choice );
-    },
-    render: function() {
-        var disable = this.props.disable;
-        var classString = !disable ?  "radio" :  "radio disabled";
-        return (
-            <div className={classString}>
-                <label className={this.props.classType}>
-                    <input type="radio" name="optionsRadios" id={this.props.index} value={this.props.choice} onChange={this.handleClick}  />
-                    {this.props.choice}
-                </label>
-            </div>
-        );
-    }
-} );
-
-var QuizContainer = React.createClass( {
-    getInitialState: function() {
-        return {           
-            choices:[],
-            user_choice: "",
-            is_done: false 
-        };
-    },
-    componentDidMount: function() {
-		var vhub = $.connection.simpleHub;
-        var self = this;
-
-		vhub.client.showLiveResult = function (data) {
-			log.debug( "data" );
-			log.debug( data );
-			log.debug( "---------------------" );
-			var obj = $.parseJSON(data);    
-			log.debug( "obj" );
-			log.debug( obj );
-			log.debug( "---------------------" );
-			self.setState(obj);                                         
-		};  
-
-		$.ajax({
-		  url: this.props.url,
-		  dataType: 'json',
-		  success: function(data) {
-			log.debug( "data" );
-			log.debug( data );
-			log.debug( "---------------------" );
-			this.setState( data );
-		  }.bind(this),
-		  error: function(xhr, status, err) {
-			log.error(this.props.url, status, err.toString());
-		  }.bind(this)
-		});
-   },
-    selectedAnswer: function( option ) {
-        this.setState( { user_choice: option } );
-    },
-    handleSubmit: function() {                       
-                var selectedChoice = this.state.user_choice;
-                 var vhub = $.connection.simpleHub;
-                  $.connection.hub.start().done(function () {               
-                    // Call the Send method on the hub.
-                    vhub.server.send(selectedChoice);
-                    // Clear text box and reset focus for next comment.                   
-                });
-                this.setState({ is_done: true });
-     },
-	render: function() {
-	    log.debug( "this.state.choices" );
-	    log.debug( this.state.choices );
-	    log.debug( "---------------------" );
-        var self = this;
- 
-        var choices = this.state.choices.map( function( choice, index ) {           
+    var TextInput = React.createClass({
+        getInitialState: function() {
+            return { value: "" };
+        },
+        handleChange: function(event) {
+            this.setState({value: event.target.value});
+        },
+        render: function() {
+            var id = _.uniqueId("TextInput");
             return (
-                <RadioInput key={choice} choice={choice} index={index} onChoiceSelect={self.selectedAnswer}  />
-            );
-        } );
-        var button_name = "Submit";
-        return(
-		    <div className="quizContainer">
-                <h1>Quiz</h1>
-                {choices}
-                <button id="submit" className="btn btn-default" onClick={this.handleSubmit}>{button_name}</button>               
-            </div>
-        );
-     }
-} );
+                <div>
+                    <label htmlFor={id}>{this.props.label}</label>
+                    <input type="text" 
+                           id={id} 
+                           value={this.state.value} 
+                           onChange={this.handleChange}
+                    />
+                </div>);
+        }
+    });
 
-React.render(
-    <QuizContainer url="/api2/values" />,
-    document.getElementById('datacontainer')
-);
+    var AddEmployeeForm = React.createClass({
+        handleSubmit: function(event) {
+            event.preventDefault();
+            if (this.props.onEmployeeAdded) {
+                this.props.onEmployeeAdded({
+                    firstName: this.refs.firstName.state.value,
+                    lastName: this.refs.lastName.state.value
+                });
+            }
+        },
+        render: function() {
+            return (
+                <form onSubmit={this.handleSubmit}>
+                    <TextInput ref="firstName" label="First name:" />
+                    <TextInput ref="lastName" label="Last name:" />
+                    <input type="submit" value="Add Employee" />
+                </form>);
+        }
+    });
+
+    var EmployeeTable = React.createClass({
+        render: function() {
+            return (
+                <table>
+                    <thead>
+                        <tr>
+                            <td>First Name</td>
+                            <td>Last Name</td>
+                        </tr>
+                    </thead>
+                    <tbody>{
+                        this.props.employees.map(function (employee) {
+                            return (
+                                <tr>
+                                    <td>{employee.FirstName}</td>
+                                    <td>{employee.LastName}</td>
+                                </tr>);
+                        })
+                    }</tbody>
+                </table>);
+            return ;
+        }
+    });
+
+    var EmployeeForm = React.createClass({
+
+        componentDidMount: function() {
+            var employeeHub = $.connection.employeeHub;
+            var self = this;
+
+            employeeHub.client.showEmployees = function (data) {
+                var employees = $.parseJSON(data);
+                self.setState({ employees: employees });
+            };
+
+            $.connection.hub.start().done(function () {
+                employeeHub.server.getEmployees();
+            });
+        },
+
+        getInitialState: function() {
+            return { employees: [] };
+        },
+
+        handleEmployeeAdded: function(employee) {
+            $.connection.employeeHub.server.addEmployee(
+                employee.firstName, employee.lastName
+            );
+        },
+        
+        render: function() {
+            return (
+                <div>
+                    <AddEmployeeForm onEmployeeAdded={this.handleEmployeeAdded} />
+                    <EmployeeTable employees={this.state.employees} />
+                </div>);
+        }
+    });
+
+    var appContainer = document.getElementById('app-container');
+    React.render(<EmployeeForm/>, appContainer);
+})();

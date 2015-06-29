@@ -25,6 +25,7 @@ NUGET
     jQuery (2.1.4)
     JSPool (0.3.0)
       JavaScriptEngineSwitcher.Core (>= 1.2.4)
+    lodash (3.9.3)
     log4javascript (1.4.13)
     Microsoft.AspNet.Mvc (5.2.3)
       Microsoft.AspNet.Razor (>= 3.2.3 < 3.3.0)
@@ -72,6 +73,7 @@ NUGET
     Microsoft.Owin.Security (3.0.1)
       Microsoft.Owin (>= 3.0.1)
       Owin (>= 1.0)
+    Microsoft.SharePointOnline.CSOM (16.1.3912.1204)
     Microsoft.Web.Infrastructure (1.0.0.0)
     Modernizr (2.8.3)
     MsieJavaScriptEngine (1.5.4)
@@ -105,5 +107,5 @@ NUGET
 GITHUB
   remote: fsharp/FAKE
   specs:
-    modules/Octokit/Octokit.fsx (98d8f2e57e8f9972703d4237dd62f8e13d6b8d7d)
+    modules/Octokit/Octokit.fsx (e473252a0711dfa765f7ba8819446c86f07c68c3)
       Octokit

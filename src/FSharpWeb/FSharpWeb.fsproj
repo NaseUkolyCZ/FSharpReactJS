@@ -144,7 +144,6 @@
     <None Include="fonts\glyphicons-halflings-regular.ttf" />
     <None Include="fonts\glyphicons-halflings-regular.svg" />
     <None Include="fonts\glyphicons-halflings-regular.eot" />
-    <Compile Include="AssemblyInfo.fs" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\bootstrap-theme.min.css">
       <Paket>True</Paket>
@@ -162,6 +161,12 @@
       <Paket>True</Paket>
     </Content>
     <Content Include="Content\bootstrap.css">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\lodash.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\lodash.min.js">
       <Paket>True</Paket>
     </Content>
     <Content Include="Scripts\log4javascript.js">
@@ -228,8 +233,9 @@
     <Content Include="readme.txt">
       <Paket>True</Paket>
     </Content>
+    <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Startup.fs" />
-    <Compile Include="SimpleHub.fs" />
+    <Compile Include="EmployeeHub.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
