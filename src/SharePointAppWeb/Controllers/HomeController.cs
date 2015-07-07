@@ -17,20 +17,6 @@ namespace SharePointAppWeb.Controllers
 
             var spContext = SharePointContextProvider.Current.GetSharePointContext(HttpContext);
 
-            using (var clientContext = spContext.CreateUserClientContextForSPHost())
-            {
-                if (clientContext != null)
-                {
-                    spUser = clientContext.Web.CurrentUser;
-
-                    clientContext.Load(spUser, user => user.Title);
-
-                    clientContext.ExecuteQuery();
-
-                    ViewBag.UserName = spUser.Title;
-                }
-            }
-
             var RedirectTo = ConfigurationManager.AppSettings["RedirectTo"];
             if (string.IsNullOrWhiteSpace(RedirectTo))
             {
