@@ -17,6 +17,7 @@
     <TargetFrameworkProfile />
     <WebGreaseLibPath>..\..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
     <Name>FSharpWeb</Name>
+    <NameOfLastUsedPublishProfile>FSharpReactJS2 - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
