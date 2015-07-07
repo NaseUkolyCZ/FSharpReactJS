@@ -6,9 +6,11 @@ nuget FSharp.Dynamic
 nuget FSharp.Formatting
 nuget FsWebAddRegistryEntries
 nuget Microsoft.AspNet.Mvc
+nuget Microsoft.AspNet.Razor
 nuget Microsoft.AspNet.SignalR
 nuget Microsoft.AspNet.Web.Optimization
 nuget Microsoft.AspNet.WebApi
+nuget Microsoft.AspNet.WebPages
 nuget Microsoft.SharePointOnline.CSOM
 nuget Modernizr
 nuget NUnit 
@@ -22,6 +24,7 @@ nuget SourceLink.Fake
 nuget WebGrease
 nuget bootstrap
 nuget jQuery
+nuget jQuery.Validation
 nuget log4javascript
 nuget lodash
 

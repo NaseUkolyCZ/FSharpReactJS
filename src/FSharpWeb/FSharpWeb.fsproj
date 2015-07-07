@@ -216,7 +216,9 @@
     <Content Include="Scripts\respond.js">
       <Paket>True</Paket>
     </Content>
-    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\npm.js">
+      <Paket>True</Paket>
+    </Content>
     <Compile Include="Controllers\HomeController.fs" />
     <Compile Include="Controllers\ValuesController.fs" />
     <Content Include="Views\Web.config" />
