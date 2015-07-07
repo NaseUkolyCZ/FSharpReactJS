@@ -2,13 +2,14 @@ Antlr
 bootstrap
 FsWebAddRegistryEntries
 jQuery
+lodash
 Microsoft.AspNet.Mvc
+Microsoft.AspNet.WebApi
+Microsoft.AspNet.Web.Optimization
 Modernizr
 Newtonsoft.Json
 Respond
 WebGrease
-Microsoft.AspNet.WebApi
-Microsoft.AspNet.Web.Optimization
 React.Web.Mvc4
 Microsoft.AspNet.SignalR
 Owin

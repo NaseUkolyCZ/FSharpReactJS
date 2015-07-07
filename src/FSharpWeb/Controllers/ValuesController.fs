@@ -13,5 +13,5 @@ type ValuesController() =
 
     /// Gets all values.
     [<Route("")>]
-    member x.Get() = Library.values
+    member x.Get() = (new EmployeeLibrary()).Employees
 
